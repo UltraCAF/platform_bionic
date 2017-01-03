@@ -1024,7 +1024,7 @@ LOCAL_CPPFLAGS := $(libc_common_cppflags) -Wold-style-cast
 
 ifeq ($(BOARD_USES_QCNE),true)
 ifeq ($(BOARD_USES_LIBC_WRAPPER),true)
-LOCAL_CPPFLAGS += -DUSE_WRAPPER
+LOCAL_CFLAGS += -DUSE_WRAPPER
 endif
 endif
 
@@ -1262,7 +1262,7 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(libc_common_src_files)
-LOCAL_CFLAGS := $(libc_common_cflags) \
+LOCAL_CFLAGS := $(libc_common_cflags)
 
 ifeq ($(BOARD_USES_QCNE),true)
 ifeq ($(BOARD_USES_LIBC_WRAPPER),true)
@@ -1418,7 +1418,7 @@ LOCAL_SRC_FILES := \
 ifeq ($(BOARD_USES_QCNE),true)
 ifeq ($(BOARD_USES_LIBC_WRAPPER),true)
     LOCAL_SRC_FILES += codeaurora/PropClient.cpp
-    LOCAL_CPPFLAGS += -DUSE_WRAPPER
+    LOCAL_CFLAGS += -DUSE_WRAPPER
 endif
 endif
 
