@@ -247,7 +247,7 @@ libc_bionic_ndk_src_files := \
 
 libc_bionic_ndk_src_files += \
     codeaurora/PropClientDispatch.cpp \
-    codeaurora/PropClientDispatchWrite.cpp
+    codeaurora/PropClientDispatchWrite.cpp \
 
 libc_bionic_src_files :=
 
