@@ -196,8 +196,6 @@ libc_bionic_ndk_src_files := \
     bionic/sched_getcpu.cpp \
     bionic/semaphore.cpp \
     bionic/send.cpp \
-    bionic/sendmsg.cpp \
-    bionic/sendto.cpp \
     bionic/setegid.cpp \
     bionic/__set_errno.cpp \
     bionic/seteuid.cpp \
@@ -243,11 +241,6 @@ libc_bionic_ndk_src_files := \
     bionic/wchar.cpp \
     bionic/wctype.cpp \
     bionic/wmempcpy.cpp \
-    bionic/writev.cpp \
-
-libc_bionic_ndk_src_files += \
-    codeaurora/PropClientDispatch.cpp \
-    codeaurora/PropClientDispatchWrite.cpp \
 
 libc_bionic_src_files :=
 
@@ -1022,6 +1015,7 @@ LOCAL_CFLAGS := $(libc_common_cflags) \
 LOCAL_CONLYFLAGS := $(libc_common_conlyflags)
 LOCAL_CPPFLAGS := $(libc_common_cppflags) -Wold-style-cast
 
+
 LOCAL_C_INCLUDES := $(libc_common_c_includes) bionic/libstdc++/include
 LOCAL_MODULE := libc_bionic
 LOCAL_CLANG := $(use_clang)
@@ -1047,11 +1041,10 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(libc_bionic_ndk_src_files)
 LOCAL_CFLAGS := $(libc_common_cflags) \
-    -Wframe-larger-than=2048
+    -Wframe-larger-than=2048 \
 
 LOCAL_CONLYFLAGS := $(libc_common_conlyflags)
-LOCAL_CPPFLAGS := $(libc_common_cppflags) -Wold-style-cast \
-
+LOCAL_CPPFLAGS := $(libc_common_cppflags) -Wold-style-cast
 LOCAL_C_INCLUDES := $(libc_common_c_includes) bionic/libstdc++/include
 LOCAL_MODULE := libc_bionic_ndk
 LOCAL_CLANG := $(use_clang)
@@ -1239,7 +1232,6 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(libc_common_src_files)
 LOCAL_CFLAGS := $(libc_common_cflags)
-
 LOCAL_CONLYFLAGS := $(libc_common_conlyflags)
 LOCAL_CPPFLAGS := $(libc_common_cppflags)
 LOCAL_C_INCLUDES := $(libc_common_c_includes)
