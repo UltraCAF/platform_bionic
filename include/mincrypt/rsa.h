@@ -45,11 +45,12 @@ typedef struct RSAPublicKey {
     int exponent;             /* 3 or 65537 */
 } RSAPublicKey;
 
-int RSA_verify(const RSAPublicKey *key,
+/*int RSA_verify(const RSAPublicKey *key,
                const uint8_t* signature,
                const int len,
                const uint8_t* hash,
                const int hash_len);
+*/
 
 #ifdef __cplusplus
 }
